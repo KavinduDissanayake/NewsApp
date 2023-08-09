@@ -1,0 +1,15 @@
+//
+//  Dev.xcconfig
+//  NewsApp
+//
+//  Created by Kavindu Dissanayake on 2023-08-07.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+APP_ICON = AppIcon-prod
+APP_NAME = Production
+BASE_URL =
+API_KEY =
+BUNDLE_ID = com.news.prod
+
