@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="975-sk-baN">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="GQo-wd-efZ">
+            <objects>
+                <viewController id="4Lt-vm-6YT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FEt-DQ-YDx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hcY-pg-Fsh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="ic_inactive_profile" selectedImage="ic_active_profile" id="vk5-E8-36p"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTz-BJ-lLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2815" y="-1100"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="rHI-V4-Iv6">
+            <objects>
+                <viewController id="XYS-3s-NTV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ydj-iY-Bgq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6xg-ud-zX9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="ic_inactive_hart" selectedImage="ic_active_hart" id="OaQ-Rr-5C0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WU2-20-9in" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2924" y="-361"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="UwB-bn-8Jd">
+            <objects>
+                <viewController id="RL0-00-dn9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="USV-Py-ugz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XF5-Px-BH4"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="ic_inactive_home" selectedImage="ic_active_home" id="KEv-L6-m4f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAd-vz-LDv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2970" y="-1894"/>
+        </scene>
+        <!--Custom Tab Bar Controller-->
+        <scene sceneID="BKV-Q0-ecF">
+            <objects>
+                <tabBarController storyboardIdentifier="CustomTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="975-sk-baN" customClass="CustomTabBarController" customModule="Developemnt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bub-CP-hz6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.020940721650000001" green="0.0065278100409999996" blue="0.016272819840000001" alpha="0.87569090140000005" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.73725497719999999" green="0.34117650989999998" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="RL0-00-dn9" kind="relationship" relationship="viewControllers" id="87c-dL-cow"/>
+                        <segue destination="XYS-3s-NTV" kind="relationship" relationship="viewControllers" id="QHM-8o-sDb"/>
+                        <segue destination="4Lt-vm-6YT" kind="relationship" relationship="viewControllers" id="fS3-6h-WGS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2d-Bd-PCi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3806" y="-1049"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_active_hart" width="24" height="24"/>
+        <image name="ic_active_home" width="24" height="24"/>
+        <image name="ic_active_profile" width="24" height="24"/>
+        <image name="ic_inactive_hart" width="24" height="24"/>
+        <image name="ic_inactive_home" width="24" height="24"/>
+        <image name="ic_inactive_profile" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
