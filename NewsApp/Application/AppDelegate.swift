@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
       //   -----------------------------------Testing-------------------------------------
-         let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-         let viewController = storyboard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+         let storyboard = UIStoryboard(name: "Home", bundle: nil)
+         let viewController = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
          let navigationController = UINavigationController.init(rootViewController: viewController)
          self.window?.rootViewController = navigationController
          //-----------------------------------Testing-------------------------------------

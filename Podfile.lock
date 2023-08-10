@@ -1,26 +1,44 @@
 PODS:
+  - Alamofire (5.7.1)
+  - Connectivity (6.0.0)
+  - RappleProgressHUD (4.1)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - SDWebImage (5.17.0):
+    - SDWebImage/Core (= 5.17.0)
+  - SDWebImage/Core (5.17.0)
 
 DEPENDENCIES:
+  - Alamofire
+  - Connectivity
+  - RappleProgressHUD
   - RxCocoa
   - RxSwift
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - Connectivity
+    - RappleProgressHUD
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SDWebImage
 
 SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Connectivity: 1919d4dc94c63514a2ec0574336f2e83857a20a8
+  RappleProgressHUD: f29bc5dc5f9834c2caa9c2ae21ba11f3ff2b5a85
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
 
-PODFILE CHECKSUM: eed400beecfd63ae13cbfb4c7ee20537c793b5d6
+PODFILE CHECKSUM: 33d03fe5263e2e1fc37c140291074dfcf134ab9b
 
 COCOAPODS: 1.12.0

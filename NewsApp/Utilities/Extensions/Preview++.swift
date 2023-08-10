@@ -6,6 +6,11 @@
 //
 
 import SwiftUI
+extension NSObject {
+    class var className: String {
+        return String(describing: self)
+    }
+}
 
 
 // MARK: - UIViewControllerPreview Struct

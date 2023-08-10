@@ -9,7 +9,7 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 APP_ICON = AppIcon-prod
 APP_NAME = Production
-BASE_URL =
-API_KEY =
+BASE_URL =  https:/\/newsapi.org/v2/
+API_KEY = 53b2878ca9014ae0869814625c3f9df1
 BUNDLE_ID = com.news.prod
 

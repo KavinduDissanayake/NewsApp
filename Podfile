@@ -8,8 +8,14 @@ target 'NewsApp' do
   # Pods for NewsApp
   pod 'RxSwift'
   pod 'RxCocoa'
-  
-  
+  #network conntion
+  pod 'Alamofire'
+  #indicaror
+  pod 'RappleProgressHUD'
+  #connection checker
+  pod 'Connectivity'
+  #image loader
+  pod 'SDWebImage'
   
   # set development tragets
   post_install do |installer|
