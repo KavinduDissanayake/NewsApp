@@ -15,9 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UIStoryboard(name: "BottomTabBar", bundle: nil).instantiateInitialViewController()
-        window?.makeKeyAndVisible()
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = UIStoryboard(name: "BottomTabBar", bundle: nil).instantiateInitialViewController()
+//        window?.makeKeyAndVisible()
+
+        
+        
+      //   -----------------------------------Testing-------------------------------------
+         let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+         let viewController = storyboard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+         let navigationController = UINavigationController.init(rootViewController: viewController)
+         self.window?.rootViewController = navigationController
+         //-----------------------------------Testing-------------------------------------
 
         return true
     }

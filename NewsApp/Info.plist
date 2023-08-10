@@ -13,13 +13,13 @@
 		<key>BUNDLE_ID</key>
 		<string>$(BUNDLE_ID)</string>
 	</dict>
-    
-    <key>UIAppFonts</key>
-    <array>
-        <string>Nunito-Bold.ttf</string>
-        <string>Nunito-SemiBold.ttf</string>
-        <string>Nunito-Regular.ttf</string>
-        <string>NewYorkSmall-Bold.ttf</string>
-    </array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Nunito-ExtraBold.ttf</string>
+		<string>Nunito-Bold.ttf</string>
+		<string>Nunito-SemiBold.ttf</string>
+		<string>Nunito-Regular.ttf</string>
+		<string>NewYorkSmall-Bold.ttf</string>
+	</array>
 </dict>
 </plist>
