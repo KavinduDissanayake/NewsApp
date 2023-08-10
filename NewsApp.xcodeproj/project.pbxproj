@@ -28,7 +28,10 @@
 		CF4A47BC2A854F2F00FC7004 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4A47BA2A854F2F00FC7004 /* CategoryCell.swift */; };
 		CF4A47BD2A854F2F00FC7004 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4A47BB2A854F2F00FC7004 /* CategoryCell.xib */; };
 		CF4A47C02A856E6D00FC7004 /* String++.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4A47BF2A856E6D00FC7004 /* String++.swift */; };
-		CF592DA42A83A2B100C7130C /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF592DA32A83A2B100C7130C /* CustomTabBarController.swift */; };
+		CF4A47C42A8573C400FC7004 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4A47C32A8573C400FC7004 /* PersistenceController.swift */; };
+		CF4A47C62A85797300FC7004 /* ApplicationServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4A47C52A85797200FC7004 /* ApplicationServiceProvider.swift */; };
+		CF4A47C82A857C6600FC7004 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4A47C72A857C6600FC7004 /* ProfileVC.swift */; };
+		CF592DA42A83A2B100C7130C /* CustomTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF592DA32A83A2B100C7130C /* CustomTBC.swift */; };
 		CF592DCC2A83ED6700C7130C /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF592DCB2A83ED6700C7130C /* Nunito-Bold.ttf */; };
 		CF592DCE2A83ED6C00C7130C /* NewYorkSmall-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF592DCD2A83ED6C00C7130C /* NewYorkSmall-Bold.otf */; };
 		CF592DD02A83ED7100C7130C /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF592DCF2A83ED7100C7130C /* Nunito-SemiBold.ttf */; };
@@ -80,7 +83,10 @@
 		CF4A47BA2A854F2F00FC7004 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		CF4A47BB2A854F2F00FC7004 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		CF4A47BF2A856E6D00FC7004 /* String++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String++.swift"; sourceTree = "<group>"; };
-		CF592DA32A83A2B100C7130C /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		CF4A47C32A8573C400FC7004 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		CF4A47C52A85797200FC7004 /* ApplicationServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceProvider.swift; sourceTree = "<group>"; };
+		CF4A47C72A857C6600FC7004 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		CF592DA32A83A2B100C7130C /* CustomTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTBC.swift; sourceTree = "<group>"; };
 		CF592DCB2A83ED6700C7130C /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		CF592DCD2A83ED6C00C7130C /* NewYorkSmall-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Bold.otf"; sourceTree = "<group>"; };
 		CF592DCF2A83ED7100C7130C /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -181,6 +187,7 @@
 		CF4A47A82A84C8F900FC7004 /* Componets */ = {
 			isa = PBXGroup;
 			children = (
+				CF4A47C12A856FE100FC7004 /* CategoryCell */,
 				CF4A47BE2A8568B600FC7004 /* LatestNewsCell */,
 			);
 			path = Componets;
@@ -219,6 +226,24 @@
 			path = LatestNewsCell;
 			sourceTree = "<group>";
 		};
+		CF4A47C12A856FE100FC7004 /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				CF4A47BA2A854F2F00FC7004 /* CategoryCell.swift */,
+				CF4A47BB2A854F2F00FC7004 /* CategoryCell.xib */,
+			);
+			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		CF4A47C22A8573B800FC7004 /* LocalDb */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF50DF2A814067001FAD24 /* NewsApp.xcdatamodeld */,
+				CF4A47C32A8573C400FC7004 /* PersistenceController.swift */,
+			);
+			path = LocalDb;
+			sourceTree = "<group>";
+		};
 		CF592D942A83897B00C7130C /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,12 +255,14 @@
 		CF592D952A83898300C7130C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CF4A47C22A8573B800FC7004 /* LocalDb */,
 				CF4A47B12A852F4A00FC7004 /* Dummy */,
 				CF592DD32A83FD9900C7130C /* Extensions */,
 				CFAF50ED2A8141F8001FAD24 /* AppConfig */,
 				CFAF50F62A814C9E001FAD24 /* Fonts */,
 				CF4A47B42A8533CE00FC7004 /* Handlers.swift */,
 				CF4A47B62A85340300FC7004 /* Reachability.swift */,
+				CF4A47C52A85797200FC7004 /* ApplicationServiceProvider.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -257,11 +284,9 @@
 			children = (
 				CF4A47A72A84C8E000FC7004 /* Home */,
 				CF8ECEAD2A848927004FE88C /* Auth */,
-				CF592DA32A83A2B100C7130C /* CustomTabBarController.swift */,
+				CF592DA32A83A2B100C7130C /* CustomTBC.swift */,
 				CF8ECEBB2A84981A004FE88C /* NewsTVCell.swift */,
 				CF8ECEBC2A84981A004FE88C /* NewsTVCell.xib */,
-				CF4A47BA2A854F2F00FC7004 /* CategoryCell.swift */,
-				CF4A47BB2A854F2F00FC7004 /* CategoryCell.xib */,
 			);
 			path = "VCs+VMs";
 			sourceTree = "<group>";
@@ -296,6 +321,7 @@
 			children = (
 				CF4A479E2A84BE9800FC7004 /* SignUp */,
 				CF4A47912A84AB3600FC7004 /* Login */,
+				CF4A47C72A857C6600FC7004 /* ProfileVC.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -338,7 +364,6 @@
 				CF592D952A83898300C7130C /* Utilities */,
 				CFAF50E22A814068001FAD24 /* Assets.xcassets */,
 				CFAF50E72A814068001FAD24 /* Info.plist */,
-				CFAF50DF2A814067001FAD24 /* NewsApp.xcdatamodeld */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -492,7 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF4A47C02A856E6D00FC7004 /* String++.swift in Sources */,
-				CF592DA42A83A2B100C7130C /* CustomTabBarController.swift in Sources */,
+				CF592DA42A83A2B100C7130C /* CustomTBC.swift in Sources */,
 				CF4A47932A84AC4400FC7004 /* LoginVC.swift in Sources */,
 				CF592DDD2A840FD500C7130C /* SignUpVC.swift in Sources */,
 				CFAF50F52A814B8F001FAD24 /* AppConfig.swift in Sources */,
@@ -500,6 +525,7 @@
 				CF4A47AA2A84CB3400FC7004 /* HomeViewModel.swift in Sources */,
 				CF4A479D2A84BE8F00FC7004 /* SignUpViewModel.swift in Sources */,
 				CF592DE02A84118600C7130C /* CardView.swift in Sources */,
+				CF4A47C82A857C6600FC7004 /* ProfileVC.swift in Sources */,
 				CF4A47992A84B84100FC7004 /* UIButton++.swift in Sources */,
 				CF592DD52A83FDAA00C7130C /* Preview++.swift in Sources */,
 				CF4A47AD2A8528B900FC7004 /* AFWrapper.swift in Sources */,
@@ -512,6 +538,8 @@
 				CF592DDB2A840F0C00C7130C /* ViewController++.swift in Sources */,
 				CF4A47A42A84C62C00FC7004 /* UIView++.swift in Sources */,
 				CF8ECEB32A849138004FE88C /* LatestNewsCell.swift in Sources */,
+				CF4A47C42A8573C400FC7004 /* PersistenceController.swift in Sources */,
+				CF4A47C62A85797300FC7004 /* ApplicationServiceProvider.swift in Sources */,
 				CF4A479B2A84BE0E00FC7004 /* BaseVM.swift in Sources */,
 				CF4A47B52A8533CE00FC7004 /* Handlers.swift in Sources */,
 				CF4A47972A84B57600FC7004 /* Validators++.swift in Sources */,

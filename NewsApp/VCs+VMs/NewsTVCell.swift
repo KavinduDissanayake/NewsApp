@@ -9,6 +9,9 @@ import UIKit
 
 class NewsTVCell: UITableViewCell {
 
+    @IBOutlet weak var imageBack: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

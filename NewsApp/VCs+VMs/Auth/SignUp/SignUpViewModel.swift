@@ -56,7 +56,7 @@ class SignUpViewModel:BaseVM {
     func validateAllFields() -> Bool {
         self.hasAttemptedToSubmit.accept(true)
         validateFields()
-        return emailError.value == nil && passwordError.value == nil
+        return nameError.value == nil && emailError.value == nil && passwordError.value == nil
     }
 
     

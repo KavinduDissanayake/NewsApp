@@ -16,9 +16,9 @@ class BaseVC: UIViewController,LoadingIndicatorDelegate{
         self.navigationController?.isNavigationBarHidden = isHide
     }
     
-    func handleError(_ errorMessage: String) {
+    func showAlert(_ errorMessage: String,title: String? = "") {
         // Present an alert or handle the error in another way
-        let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        let alertController = UIAlertController(title: title ?? "Error", message: errorMessage, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         self.present(alertController, animated: true)
     }

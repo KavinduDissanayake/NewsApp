@@ -152,7 +152,7 @@ extension HomeVC {
             self.stopLoading()
             //handle error
             if message !=  "" && !status{
-                self.handleError(message)
+                self.showAlert(message)
             }
         }
     }
@@ -165,7 +165,7 @@ extension HomeVC {
             self.stopLoading()
             //handle error
             if message !=  "" && !status{
-                self.handleError(message)
+                self.showAlert(message)
             }
         }
     }
@@ -183,7 +183,7 @@ extension HomeVC :UICollectionViewDelegateFlowLayout{
             let font = UIFont(name: "Nunito-SemiBold", size: 14)!
             let width = viewModel.categoryList.value[indexPath.row].name?.widthWithConstrainedHeight(30, font: font) ?? 0
             return width < 90 ? CGSize(width: 97, height: 30) : CGSize(width: width + 20, height: 32)
-
+            
         }
         return CGSize(width: 0, height: 0)
         

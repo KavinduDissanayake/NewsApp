@@ -50,3 +50,24 @@ extension UIView {
         layer.insertSublayer(gradientLayer, at: 0)
     }
 }
+
+extension UIView {
+    
+    private static var tapActionKey: Int = 0
+
+    func addTapGesture(action: @escaping () -> Void) {
+        isUserInteractionEnabled = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+        addGestureRecognizer(tap)
+        
+        // Using associated object to retain the closure
+        objc_setAssociatedObject(self, &UILabel.tapActionKey, action, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+    
+    @objc private func tapAction() {
+        if let action = objc_getAssociatedObject(self, &UILabel.tapActionKey) as? () -> Void {
+            action()
+        }
+    }
+}

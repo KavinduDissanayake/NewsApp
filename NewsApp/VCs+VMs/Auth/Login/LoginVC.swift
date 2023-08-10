@@ -20,21 +20,33 @@ class LoginVC: BaseVC {
     let viewModel = LoginViewModel()
     let disposeBag = DisposeBag()
     
+    @IBOutlet weak var signUpText: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         hideKeyboardWhenTappedAround()
         bindViewModel()
         setUpUI()
-      
+        
     }
-   
+    
     func setUpUI(){
         defaultBackBtn()
-    
+        
         let startColor = UIColor(red: 1, green: 0.23, blue: 0.27, alpha: 1)
         let endColor = UIColor(red: 1, green: 0.50, blue: 0.53, alpha: 1)
         loginBtn.setGradientBackground(colorOne: startColor, colorTwo: endColor, cornerRadius: 20)
+        
+        
+        signUpText.addTapGesture {
+            print("Sign up text tapped!")
+            // Add your tap action logic here
+            ASP.shared.pushToViewController(in: .Auth, for: .SignUpVC, from: self)
+
+        }
     }
     
     
@@ -61,12 +73,23 @@ class LoginVC: BaseVC {
     
     
     func callAPI(){
+        
+        
         //chek validation
         if !self.viewModel.validateAllFields() {
             return
         }
         
         //call api and get sueccss
+        PC.shared.loginUser(email:viewModel.email.value ?? "", password: viewModel.password.value ?? "") { (success, message) in
+            if success {
+                print("Successfully Login!")
+                ASP.shared.pushToViewController(in: .BottomTabBar, for: .CustomTBC, from: self)
+            } else {
+                print("Error: \(message)")
+                self.showAlert(message)
+            }
+        }
         
     }
 }

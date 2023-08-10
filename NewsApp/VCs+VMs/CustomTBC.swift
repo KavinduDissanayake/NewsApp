@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class CustomTabBarController: UITabBarController {
+class CustomTBC: UITabBarController {
     
     //MARK: Life cycle
     override func viewDidLoad() {

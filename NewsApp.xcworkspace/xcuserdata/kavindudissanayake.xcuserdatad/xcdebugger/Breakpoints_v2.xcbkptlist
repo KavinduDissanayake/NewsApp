@@ -3,4 +3,117 @@
    uuid = "0A962E43-1793-4BBE-9721-C81D846BC8EC"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AAE3E4EA-52E0-4B3E-8C0E-05EB09A349AA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsApp/VCs+VMs/Auth/SignUp/SignUpVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "callAPI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AAE3E4EA-52E0-4B3E-8C0E-05EB09A349AA - fef6b1aabd03adef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.String) -&gt; () in Production.SignUpVC.callAPI() -&gt; ()"
+                  moduleName = "Production"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kavindudissanayake/Developer/My-Project/NewsApp/NewsApp/VCs+VMs/Auth/SignUp/SignUpVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "836">
+               </Location>
+               <Location
+                  uuid = "AAE3E4EA-52E0-4B3E-8C0E-05EB09A349AA - f028057cb3943b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Production.SignUpVC.callAPI() -&gt; ()"
+                  moduleName = "Production"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kavindudissanayake/Developer/My-Project/NewsApp/NewsApp/VCs+VMs/Auth/SignUp/SignUpVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "AAE3E4EA-52E0-4B3E-8C0E-05EB09A349AA - fef6b1aabd03adb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.String) -&gt; () in Production.SignUpVC.callAPI() -&gt; ()"
+                  moduleName = "Production"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kavindudissanayake/Developer/My-Project/NewsApp/NewsApp/VCs+VMs/Auth/SignUp/SignUpVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F6C3EF4-C36B-4DCB-9C7D-60AACF47DA30"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsApp/Application/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0F6C3EF4-C36B-4DCB-9C7D-60AACF47DA30 - 92403c0871c2de37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Production.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "Production"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kavindudissanayake/Developer/My-Project/NewsApp/NewsApp/Application/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  uuid = "0F6C3EF4-C36B-4DCB-9C7D-60AACF47DA30 - 92403c0871c2de37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Production.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "Production"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kavindudissanayake/Developer/My-Project/NewsApp/NewsApp/Application/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -21,6 +21,7 @@ class SignUpVC: BaseVC {
     @IBOutlet weak var signUpBtn: UIButton!
     
     
+    @IBOutlet weak var loginText: UILabel!
     let viewModel = SignUpViewModel()
     let disposeBag = DisposeBag()
     
@@ -37,6 +38,13 @@ class SignUpVC: BaseVC {
          let startColor = UIColor(red: 1, green: 0.23, blue: 0.27, alpha: 1)
          let endColor = UIColor(red: 1, green: 0.50, blue: 0.53, alpha: 1)
          signUpBtn.setGradientBackground(colorOne: startColor, colorTwo: endColor, cornerRadius: 20)
+         
+         loginText.addTapGesture {
+             print("Sign up text tapped!")
+             // Add your tap action logic here
+             ASP.shared.pushToViewController(in: .Auth, for: .LoginVC, from: self)
+
+         }
      }
     
     
@@ -71,9 +79,17 @@ class SignUpVC: BaseVC {
         if !self.viewModel.validateAllFields() {
             return
         }
-        
         //call api and get sueccss
-        
+        PC.shared.registerUser(name:viewModel.name.value ?? "",email:viewModel.email.value ?? "", password: viewModel.password.value ?? "") { (success, message) in
+            if success {
+                print("Successfully registered!")
+                self.showAlert("Successfully registered!",title: "Sucess")
+
+            } else {
+                print("Error: \(message)")
+                self.showAlert(message)
+            }
+        }
     }
 }
 
