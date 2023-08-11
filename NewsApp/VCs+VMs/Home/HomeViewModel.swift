@@ -80,6 +80,7 @@ extension HomeViewModel {
             "country":"us",//TODO: need to change it later
             "domains":"bbc.co.uk"//other wise getting error from server
         ]
+        
         // If already fetched all articles, don't make a new request
         guard !hasFetchedAllArticles() else { return  completion(false,"") }
         
@@ -120,7 +121,7 @@ extension HomeViewModel {
             "category": selectedCategory.value ?? "",
             "page": currentPageTopNews,
             "pageSize":perPage,
-            "country":"si",//TODO: need to change it later
+            "country":"us",//TODO: need to change it later
             "domains":"bbc.co.uk"//other wise getting error from server
         ]
         // If already fetched all articles, don't make a new request

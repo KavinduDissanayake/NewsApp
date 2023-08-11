@@ -113,7 +113,9 @@ extension HomeVC {
         //cell declare
         viewModel.atricleBottomList.asObservable()
             .bind(to: allNewsTV.rx.items(cellIdentifier: NewsTVCell.className, cellType: NewsTVCell.self)) { row, element, cell in
-                
+                cell.selectionStyle = .none
+
+                cell.configCell(article: element)
             }
             .disposed(by: disposeBag)
         
@@ -141,6 +143,7 @@ extension HomeVC {
     
     func configTableView(){
         self.allNewsTV?.register(UINib(nibName: NewsTVCell.className, bundle: nil), forCellReuseIdentifier:  NewsTVCell.className)
+
     }
 }
 

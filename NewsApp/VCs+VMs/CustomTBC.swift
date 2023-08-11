@@ -14,6 +14,8 @@ class CustomTBC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTabBar()
+        setUpTabBarItems()
+        removeDefaultTint()
     }
 
     func setUpTabBar(){
@@ -43,6 +45,30 @@ class CustomTBC: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Nunito-Regular", size: 10)!], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Nunito-Regular", size: 10)!], for: .selected)
     }
+    
+    
+    func setUpTabBarItems() {
+            // Assuming you have view controllers set up
+            if let viewControllers = self.viewControllers {
+                for (index, viewController) in viewControllers.enumerated() {
+                    switch index {
+                    case 0:
+                        viewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "ic_inactive_home"), selectedImage: UIImage(named: "ic_active_home"))
+                    case 1:
+                        viewController.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(named: "ic_inactive_hart"), selectedImage: UIImage(named: "ic_active_hart"))
+                    case 2:
+                        viewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "ic_inactive_profile"), selectedImage: UIImage(named: "ic_active_profile"))
+                    default:
+                        break
+                    }
+                }
+            }
+        }
+        
+        func removeDefaultTint() {
+            tabBar.tintColor = UIColor(hexString: "#FF3A44") // Color for the active icon
+            tabBar.unselectedItemTintColor = UIColor.systemGray // Color for the inactive icons
+        }
 }
 
 

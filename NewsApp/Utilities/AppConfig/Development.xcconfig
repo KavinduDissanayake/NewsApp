@@ -10,6 +10,6 @@
 APP_ICON = AppIcon-prod
 APP_NAME = Production
 BASE_URL =  https:/\/newsapi.org/v2/
-API_KEY = 53b2878ca9014ae0869814625c3f9df1
+API_KEY = aa3e874924da4972aaecaa0e140f68b3
 BUNDLE_ID = com.news.prod
 

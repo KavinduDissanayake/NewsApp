@@ -71,3 +71,58 @@ extension UIView {
         }
     }
 }
+@IBDesignable extension UIView {
+    
+    @IBInspectable var cornerViewRadius: CGFloat {
+        get { return layer.cornerRadius }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = (newValue > 0)
+        }
+    }
+    
+    private struct AssociatedKeys {
+        static var blurViewKey = "UIView.blurViewKey"
+    }
+    
+    private var blurEffectView: UIVisualEffectView? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.blurViewKey) as? UIVisualEffectView
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &AssociatedKeys.blurViewKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    @IBInspectable var isBlurred: Bool {
+        get {
+            return blurEffectView != nil
+        }
+        set {
+            if newValue {
+                addBlurEffect()
+            } else {
+                removeBlurEffect()
+            }
+        }
+    }
+    
+    private func addBlurEffect() {
+        if blurEffectView == nil {
+            let blurEffect = UIBlurEffect(style: .light)  // You can change this to .dark or .extraLight based on your needs
+            let blurView = UIVisualEffectView(effect: blurEffect)
+            blurView.frame = self.bounds
+            blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            // Inserting the blurView at the lowest z-index to ensure it's at the background
+            self.insertSubview(blurView, at: 0)
+            
+            blurEffectView = blurView
+        }
+    }
+    
+    private func removeBlurEffect() {
+        blurEffectView?.removeFromSuperview()
+        blurEffectView = nil
+    }
+}
