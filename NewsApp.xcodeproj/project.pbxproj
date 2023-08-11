@@ -362,13 +362,6 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		CF8ECEAE2A8490E2004FE88C /* CommonView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CommonView;
-			sourceTree = "<group>";
-		};
 		CFAF50CA2A814067001FAD24 = {
 			isa = PBXGroup;
 			children = (
@@ -393,7 +386,6 @@
 				CF592D942A83897B00C7130C /* Application */,
 				CF4A47902A84AB1700FC7004 /* Base */,
 				CF592DDE2A84117600C7130C /* SubView */,
-				CF8ECEAE2A8490E2004FE88C /* CommonView */,
 				CF592D972A8389A000C7130C /* VCs+VMs */,
 				CF592D962A83899500C7130C /* StoryBoards */,
 				CF4A47AB2A8528A800FC7004 /* Network */,
