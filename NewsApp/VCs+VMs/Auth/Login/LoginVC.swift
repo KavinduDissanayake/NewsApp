@@ -34,7 +34,6 @@ class LoginVC: BaseVC {
     }
     
     func setUpUI(){
-        defaultBackBtn()
         
         let startColor = UIColor(red: 1, green: 0.23, blue: 0.27, alpha: 1)
         let endColor = UIColor(red: 1, green: 0.50, blue: 0.53, alpha: 1)

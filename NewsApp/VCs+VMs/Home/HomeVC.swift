@@ -27,6 +27,7 @@ class HomeVC: BaseVC{
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         hideNavigationBar(isHide: true)
         // Do any additional setup after loading the view.
         configCollectionView()
@@ -42,10 +43,7 @@ class HomeVC: BaseVC{
        
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        hideNavigationBar(isHide: false)
-    }
+
     
     func setUpUI(){
         searchBarBackStack.setBorder(width: 1.0, color: UIColor(hexString: "#f1f2fa"), cornerRadius: 10.0)

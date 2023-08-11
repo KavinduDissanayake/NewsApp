@@ -25,12 +25,16 @@ class NewsDetailVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        hideNavigationBar(isHide: false)
         defaultBackBtn()
         setData()
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        hideNavigationBar(isHide: true)
+    }
     
     func setData() {
         // Bind article data from viewModel to UI components

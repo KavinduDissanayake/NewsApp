@@ -31,8 +31,6 @@ class SeeAllNewsVC: BaseVC {
         }
     }
     
-    
-        
     // MARK: -Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

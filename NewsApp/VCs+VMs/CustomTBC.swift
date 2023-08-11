@@ -16,8 +16,13 @@ class CustomTBC: UITabBarController {
         setUpTabBar()
         setUpTabBarItems()
         removeDefaultTint()
+        hideNavbar()
     }
 
+    func hideNavbar(){
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     func setUpTabBar(){
         let layer = CAShapeLayer()
         layer.path = UIBezierPath(roundedRect: CGRect(x: 30, y: tabBar.bounds.minY , width: tabBar.bounds.width - 60, height: tabBar.bounds.height + 10), cornerRadius: (tabBar.frame.width/2)).cgPath

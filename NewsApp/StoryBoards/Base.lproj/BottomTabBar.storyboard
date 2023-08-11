@@ -40,6 +40,7 @@
         <scene sceneID="BKV-Q0-ecF">
             <objects>
                 <tabBarController storyboardIdentifier="CustomTBC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="975-sk-baN" customClass="CustomTBC" customModule="Developemnt" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bub-CP-hz6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -25,10 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLm-J9-Fcn" userLabel="CardView" customClass="CardView" customModule="Developemnt" customModuleProvider="target">
-                                <rect key="frame" x="16" y="103" width="361" height="699"/>
+                                <rect key="frame" x="16" y="59" width="361" height="743"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UlN-fH-u5s">
-                                        <rect key="frame" x="16" y="8" width="329" height="508"/>
+                                        <rect key="frame" x="16" y="8" width="329" height="552"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUw-wB-WZD">
                                                 <rect key="frame" x="0.0" y="0.0" width="329" height="81"/>
@@ -101,7 +101,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7K1-0F-Xmh">
-                                                <rect key="frame" x="0.0" y="358.33333333333331" width="329" height="149.66666666666669"/>
+                                                <rect key="frame" x="0.0" y="358.33333333333331" width="329" height="193.66666666666669"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
@@ -113,7 +113,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-eu-Vdl">
-                                        <rect key="frame" x="16" y="605" width="329" height="78"/>
+                                        <rect key="frame" x="16" y="649" width="329" height="78"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCB-0J-e0k">
                                                 <rect key="frame" x="0.0" y="0.0" width="329" height="50"/>
@@ -288,14 +288,14 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Please Enter valid password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woh-gN-BGF">
-                                                <rect key="frame" x="0.0" y="418" width="329" height="18"/>
+                                                <rect key="frame" x="0.0" y="418" width="329" height="1"/>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                                 <color key="textColor" red="0.73725497719999999" green="0.34117650989999998" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rY-Et-tIK">
-                                                <rect key="frame" x="0.0" y="446" width="329" height="281"/>
+                                                <rect key="frame" x="0.0" y="429" width="329" height="298"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
@@ -412,24 +412,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPw-Ql-naP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4708" y="-63"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="vQ4-7u-ZpA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sgs-SP-rf4" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M4N-4R-Hqx">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="mcU-68-0fp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vaY-or-hdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1374.8091603053435" y="-30.281690140845072"/>
         </scene>
     </scenes>
     <resources>

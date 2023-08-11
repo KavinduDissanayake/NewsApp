@@ -61,6 +61,7 @@
 		CFE0A5912A860C6F009B0313 /* SeeAllNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0A5902A860C6F009B0313 /* SeeAllNewsVC.swift */; };
 		CFE0A5942A860EB9009B0313 /* SeeAllNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0A5932A860EB9009B0313 /* SeeAllNewsViewModel.swift */; };
 		CFE0A5972A861A9F009B0313 /* ASP+Navigations+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0A5962A861A9F009B0313 /* ASP+Navigations+Present.swift */; };
+		CFE0A5992A863D49009B0313 /*  ASP+Navigations+Rooting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0A5982A863D49009B0313 /*  ASP+Navigations+Rooting.swift */; };
 		E655AA0D3F7B4A8184638206 /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFFB3030636345A407E7F65 /* Pods_NewsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,7 @@
 		CFE0A5902A860C6F009B0313 /* SeeAllNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllNewsVC.swift; sourceTree = "<group>"; };
 		CFE0A5932A860EB9009B0313 /* SeeAllNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllNewsViewModel.swift; sourceTree = "<group>"; };
 		CFE0A5962A861A9F009B0313 /* ASP+Navigations+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASP+Navigations+Present.swift"; sourceTree = "<group>"; };
+		CFE0A5982A863D49009B0313 /*  ASP+Navigations+Rooting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ASP+Navigations+Rooting.swift"; sourceTree = "<group>"; };
 		F14383CBED8AE1F0E881E0B8 /* Pods-NewsApp.release-prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release-prod.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release-prod.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -447,6 +449,7 @@
 			children = (
 				CF4A47C52A85797200FC7004 /* ApplicationServiceProvider.swift */,
 				CFE0A5962A861A9F009B0313 /* ASP+Navigations+Present.swift */,
+				CFE0A5982A863D49009B0313 /*  ASP+Navigations+Rooting.swift */,
 			);
 			path = ApplicationServiceProvider;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				CFE0A5912A860C6F009B0313 /* SeeAllNewsVC.swift in Sources */,
 				CF592DD52A83FDAA00C7130C /* Preview++.swift in Sources */,
 				CF4A47AD2A8528B900FC7004 /* AFWrapper.swift in Sources */,
+				CFE0A5992A863D49009B0313 /*  ASP+Navigations+Rooting.swift in Sources */,
 				CFE0A5972A861A9F009B0313 /* ASP+Navigations+Present.swift in Sources */,
 				CF4A47A22A84C2A100FC7004 /* UINavigationController++.swift in Sources */,
 				CF47087A2A81626B00C89C00 /* BaseVC.swift in Sources */,

@@ -15,34 +15,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        if let isLoagin = PersistenceController.shared.loggedIn,isLoagin {
-//            print("User with email  is logged in!")
-//            let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-//            let viewController = storyboard.instantiateViewController(withIdentifier: "CustomTBC") as! CustomTBC
-//            let navigationController = UINavigationController.init(rootViewController: viewController)
-//            self.window?.rootViewController = navigationController
-//        } else {
-//            print("No user is currently logged in.")
-//            let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-//            let viewController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-//            let navigationController = UINavigationController.init(rootViewController: viewController)
-//            self.window?.rootViewController = navigationController
-        //   }
         
-    
-//    let storyboard = UIStoryboard(name: "BottomTabBar", bundle: nil)
-//    let viewController = storyboard.instantiateViewController(withIdentifier: "SeeAllNewsVC") as!
-//    let navigationController = UINavigationController.init(rootViewController: viewController)
-////        viewController.viewModel.article.accept(dummyArticle1)
-//    self.window?.rootViewController = navigationController
+        //Check user and direct to suitable path
+        ASP.shared.manageUserDirection(window: window)
+ 
         
-            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-                    let viewController = storyboard.instantiateViewController(withIdentifier: "SeeAllNewsVC") as! SeeAllNewsVC
-                    let navigationController = UINavigationController.init(rootViewController: viewController)
-                    self.window?.rootViewController = navigationController
+        //-----Testing -------
+//            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+//                    let viewController = storyboard.instantiateViewController(withIdentifier: "SeeAllNewsVC") as! SeeAllNewsVC
+//                    let navigationController = UINavigationController.init(rootViewController: viewController)
+//                    self.window?.rootViewController = navigationController
+        
+        //-----Testing -------
         
         return true
     }
     
+    func setAsRoot(_controller: UIViewController) {
+        if window != nil {
+            window?.rootViewController = _controller
+        }
+    }
 }
 

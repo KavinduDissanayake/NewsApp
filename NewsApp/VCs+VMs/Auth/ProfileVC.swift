@@ -16,14 +16,10 @@ class ProfileVC: BaseVC {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        hideNavigationBar(isHide: false)
-    }
-    
     
     @IBAction func logoutTap(_ sender: Any) {
         PersistenceController.shared.logoutUser()
-        ASP.shared.pushToViewController(in: .Auth, for: .LoginVC, from: self)
+        ASP.shared.manageUserDirection()
+        
     }
 }

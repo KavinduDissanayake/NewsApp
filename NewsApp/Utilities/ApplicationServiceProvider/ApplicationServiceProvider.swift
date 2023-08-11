@@ -11,10 +11,10 @@ let ASP = ApplicationServiceProvider.self
 
 
 enum ViewContolers: String {
+    case CustomTBC
     case LoginVC
     case SignUpVC
     case HomeVC
-    case CustomTBC
     case NewsDetailVC
     case FilterBottomSheetVC
     case SeeAllNewsVC
@@ -28,11 +28,19 @@ enum Storyboard: String {
     case Home
 }
 
+// Main Interface type
+public enum MainInterfaceType {
+    case BottomTabBar
+    case Auth
+}
+
+
 
 class ApplicationServiceProvider {
     
     static let shared = ApplicationServiceProvider()
-    
+    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
     public func pushToViewController(in sb: Storyboard, for identifier: ViewContolers, from vc: UIViewController?, data: Any? = nil) {
         
         let storyboard = UIStoryboard(name: sb.rawValue, bundle: nil)
