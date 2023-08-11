@@ -30,12 +30,12 @@ Built with Swift using the MVVM design pattern. Utilizes UserDefaults And CoreDa
  Please Note according to your current development Flavor, You can Change the Base URL and API keys as well, API key you can generate from the above news open API
 
 #### More info guide image
-<img align="center" src="https://github.com/KavinduDissanayake/Vybes-app-SwiftUI/blob/main/SS/test.png"> 
+<img align="center" src="https://github.com/KavinduDissanayake/NewsApp/blob/master/SS/into_ss.png"> 
 
 
 
 #### Demo image
-<img align="center" src="https://github.com/KavinduDissanayake/Vybes-app-SwiftUI/blob/main/SS/test.png"> 
+<img align="center" src="[https://github.com/KavinduDissanayake/NewsApp/blob/master/SS/promo.png](https://github.com/KavinduDissanayake/NewsApp/blob/master/SS/promo.png)"> 
 
 ## License
 
