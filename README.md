@@ -35,7 +35,7 @@ Built with Swift using the MVVM design pattern. Utilizes UserDefaults And CoreDa
 
 
 #### Demo image
-<img align="center" src="[https://github.com/KavinduDissanayake/NewsApp/blob/master/SS/promo.png](https://github.com/KavinduDissanayake/NewsApp/blob/master/SS/promo.png)"> 
+<img align="center" src="https://github.com/KavinduDissanayake/NewsApp/blob/master/SS/promo.png"> 
 
 ## License
 
