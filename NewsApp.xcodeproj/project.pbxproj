@@ -290,7 +290,7 @@
 		CF592D952A83898300C7130C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				CFE0A5952A861A7C009B0313 /* ApplicationServiceProvider */,
+				CFE0A5952A861A7C009B0313 /* ASP */,
 				CF4A47C22A8573B800FC7004 /* LocalDb */,
 				CF4A47B12A852F4A00FC7004 /* Dummy */,
 				CF592DD32A83FD9900C7130C /* Extensions */,
@@ -436,14 +436,14 @@
 			path = SeeAllNews;
 			sourceTree = "<group>";
 		};
-		CFE0A5952A861A7C009B0313 /* ApplicationServiceProvider */ = {
+		CFE0A5952A861A7C009B0313 /* ASP */ = {
 			isa = PBXGroup;
 			children = (
 				CF4A47C52A85797200FC7004 /* ApplicationServiceProvider.swift */,
 				CFE0A5962A861A9F009B0313 /* ASP+Navigations+Present.swift */,
 				CFE0A5982A863D49009B0313 /*  ASP+Navigations+Rooting.swift */,
 			);
-			path = ApplicationServiceProvider;
+			path = ASP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

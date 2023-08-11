@@ -23,19 +23,19 @@ class NewsDetailVC: BaseVC {
     var viewModel = NewsDetailViewModel()
     let disposeBag = DisposeBag()  // Dispose bag for RxSwift
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigationBar(isHide: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideNavigationBar(isHide: false)
         defaultBackBtn()
         setData()
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        hideNavigationBar(isHide: true)
-    }
-    
+   
     func setData() {
         // Bind article data from viewModel to UI components
         viewModel.article.subscribe(onNext: { [weak self] article in
