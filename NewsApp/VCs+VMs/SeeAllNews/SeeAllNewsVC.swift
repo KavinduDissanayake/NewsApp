@@ -21,13 +21,18 @@ class SeeAllNewsVC: BaseVC {
     let disposeBag = DisposeBag()
     var viewModel = SeeAllNewsViewModel()
     
-    var selectedCategories: [Category?] = [] {
+    var selectedFilters: [Category?] = [] {
         didSet {
             updateFilterButtonImage()
+            let filteredString = selectedFilters.compactMap { $0?.name }.joined(separator: ",")
+            viewModel.selectedFiltersRelay.accept(filteredString.isEmpty ? nil : filteredString)
+            //fetch data
+            getBottomNews()
         }
     }
     
     
+        
     // MARK: -Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +41,10 @@ class SeeAllNewsVC: BaseVC {
         configTableView()
         bindViewModel()
         setupTapGesture()
-        // getBottomNews()
         setUpUI()
+        
+        //fetch data
+        getBottomNews()
     }
     
     // MARK: -Life Cycle
@@ -85,7 +92,7 @@ extension SeeAllNewsVC {
         
         //set debounced to avoid too many request
         viewModel.searchText.asObservable()
-            .debounce(.seconds(3), scheduler: MainScheduler.instance)
+            .debounce(.seconds(2), scheduler: MainScheduler.instance)
             .distinctUntilChanged() // Make sure we only
             .subscribe(onNext: { [weak self] text in
                 guard let text = text, !text.isEmpty else { return }
@@ -148,16 +155,18 @@ extension SeeAllNewsVC {
     }
     
     func updateFilterButtonImage() {
-        self.filterBtn.image = self.selectedCategories.isEmpty ? UIImage(named: "in_active_filter") : UIImage(named: "ic_active")
+        self.filterBtn.image = self.selectedFilters.isEmpty ? UIImage(named: "in_active_filter") : UIImage(named: "ic_active")
     }
     
 }
+
+
+
 extension SeeAllNewsVC {
     func configCollectionView(){
         //register xib
         self.catgoryCV.register(UINib(nibName: CategoryCell.className, bundle: Bundle.main), forCellWithReuseIdentifier: CategoryCell.className)
     }
-    
     
     func configTableView(){
         self.allNewsTV?.register(UINib(nibName: NewsTVCell.className, bundle: nil), forCellReuseIdentifier:  NewsTVCell.className)
@@ -196,12 +205,12 @@ extension SeeAllNewsVC :UICollectionViewDelegateFlowLayout{
 extension SeeAllNewsVC: FilterBottomSheetVCDelegate {
     func didSelectCategoryList(_ categoryList: [Category?]) {
         
-        self.selectedCategories = categoryList
+        self.selectedFilters = categoryList
     }
     
     func currentSelectedCategories() -> [Category?] {
         
-        return self.selectedCategories
+        return self.selectedFilters
         
     }
 }

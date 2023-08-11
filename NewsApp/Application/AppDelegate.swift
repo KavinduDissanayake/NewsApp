@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    self.window?.rootViewController = navigationController
         
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
-                    let viewController = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                    let viewController = storyboard.instantiateViewController(withIdentifier: "SeeAllNewsVC") as! SeeAllNewsVC
                     let navigationController = UINavigationController.init(rootViewController: viewController)
                     self.window?.rootViewController = navigationController
         

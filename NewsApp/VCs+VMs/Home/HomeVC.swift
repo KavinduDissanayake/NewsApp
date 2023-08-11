@@ -80,7 +80,7 @@ extension HomeVC {
         
         //set debounced to avoid too many request
         viewModel.searchText.asObservable()
-            .debounce(.seconds(3), scheduler: MainScheduler.instance)
+            .debounce(.seconds(2), scheduler: MainScheduler.instance)
             .distinctUntilChanged() // Make sure we only
             .subscribe(onNext: { [weak self] text in
                 guard let text = text, !text.isEmpty else { return }

@@ -15,7 +15,7 @@ class SeeAllNewsViewModel {
     // Input
     let searchText = BehaviorRelay<String?>(value: nil)
     let atricleBottomList = BehaviorRelay<[Article?]>(value:[])
-
+    
     
     let categoryList = BehaviorRelay<[Category]>(value: [
         .init(name: "business"),
@@ -26,15 +26,17 @@ class SeeAllNewsViewModel {
         .init(name: "sports"),
         .init(name: "technology")
     ])
-
-
+    
+    let selectedFiltersRelay = BehaviorRelay<String?>(value: nil)
     let selectedCategory = BehaviorRelay<String?>(value: nil)
     
     var currentPageBottomNews = 1
     var totalResultsBottomNews: Int = -1
 }
 
-
+extension SeeAllNewsViewModel {
+  
+}
 extension SeeAllNewsViewModel {
     func toggleSelection(at index: Int) {
         var items = categoryList.value
@@ -54,8 +56,8 @@ extension SeeAllNewsViewModel {
         }
         categoryList.accept(items)
     }
-
-
+    
+    
 }
 
 extension SeeAllNewsViewModel {
@@ -66,14 +68,14 @@ extension SeeAllNewsViewModel {
             return
         }
         
-        let endpoint = "top-headlines"
+        let endpoint = "everything"
         let parameters: [String: Any] = [
             "q":searchText.value ?? "",
             "category": selectedCategory.value ?? "",
             "page": currentPageBottomNews,
             "pageSize":perPage,
-            "country":"us",//TODO: need to change it later
-            "domains":"bbc.co.uk"//other wise getting error from server
+            "domains":"bbc.co.uk",//other wise getting error from server,
+            "sortBy":selectedFiltersRelay.value ?? ""
         ]
         // If already fetched all articles, don't make a new request
         guard !hasFetchedAllArticles() else { return  completion(false,"") }
