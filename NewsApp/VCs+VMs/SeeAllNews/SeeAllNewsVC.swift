@@ -34,6 +34,10 @@ class SeeAllNewsVC: BaseVC {
     // MARK: -Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hideNavigationBar(isHide: false)
+        
+        
         defaultBackBtn()
         configCollectionView()
         configTableView()
@@ -48,6 +52,7 @@ class SeeAllNewsVC: BaseVC {
     // MARK: -Life Cycle
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        hideNavigationBar(isHide: true)
     }
     
     func setUpUI(){

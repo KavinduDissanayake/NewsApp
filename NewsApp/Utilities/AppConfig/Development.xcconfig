@@ -7,8 +7,8 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
-APP_ICON = AppIcon-prod
-APP_NAME = Production
+APP_ICON = AppIcon-dev
+APP_NAME = Development
 BASE_URL =  https:/\/newsapi.org/v2/
 API_KEY = aa3e874924da4972aaecaa0e140f68b3
 BUNDLE_ID = com.news.prod

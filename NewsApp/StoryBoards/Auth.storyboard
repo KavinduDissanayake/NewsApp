@@ -19,12 +19,12 @@
         <!--LoginVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LoginVC" customModule="Developemnt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LoginVC" customModule="Development" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLm-J9-Fcn" userLabel="CardView" customClass="CardView" customModule="Developemnt" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLm-J9-Fcn" userLabel="CardView" customClass="CardView" customModule="Development" customModuleProvider="target">
                                 <rect key="frame" x="16" y="59" width="361" height="743"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UlN-fH-u5s">
@@ -191,12 +191,12 @@
         <!--Sign UpVC-->
         <scene sceneID="4Y9-CA-9EV">
             <objects>
-                <viewController storyboardIdentifier="SignUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sea-v3-9uA" customClass="SignUpVC" customModule="Developemnt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sea-v3-9uA" customClass="SignUpVC" customModule="Development" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ot1-Wg-RlP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ne9-bb-Cfm" userLabel="CardView" customClass="CardView" customModule="Developemnt" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ne9-bb-Cfm" userLabel="CardView" customClass="CardView" customModule="Development" customModuleProvider="target">
                                 <rect key="frame" x="16" y="59" width="361" height="759"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dJi-jk-rAR">
@@ -381,7 +381,7 @@
         <!--ProfileVC-->
         <scene sceneID="O90-GU-ut0">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bpg-Jb-HFf" customClass="ProfileVC" customModule="Developemnt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bpg-Jb-HFf" customClass="ProfileVC" customModule="Development" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vG5-FA-Bc7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

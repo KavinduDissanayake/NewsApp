@@ -15,11 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
         //Check user and direct to suitable path
         ASP.shared.manageUserDirection(window: window)
  
-        
         //-----Testing -------
 //            let storyboard = UIStoryboard(name: "Home", bundle: nil)
 //                    let viewController = storyboard.instantiateViewController(withIdentifier: "SeeAllNewsVC") as! SeeAllNewsVC

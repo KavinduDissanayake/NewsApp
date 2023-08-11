@@ -112,7 +112,7 @@
 		CF8ECEB22A849138004FE88C /* LatestNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestNewsCell.xib; sourceTree = "<group>"; };
 		CF8ECEBB2A84981A004FE88C /* NewsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVCell.swift; sourceTree = "<group>"; };
 		CF8ECEBC2A84981A004FE88C /* NewsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTVCell.xib; sourceTree = "<group>"; };
-		CFAF50D32A814067001FAD24 /* Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFAF50D32A814067001FAD24 /* Development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Development.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAF50D62A814067001FAD24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFAF50DD2A814067001FAD24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BottomTabBar.storyboard; sourceTree = "<group>"; };
 		CFAF50E02A814067001FAD24 /* NewsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsApp.xcdatamodel; sourceTree = "<group>"; };
@@ -382,7 +382,7 @@
 		CFAF50D42A814067001FAD24 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CFAF50D32A814067001FAD24 /* Production.app */,
+				CFAF50D32A814067001FAD24 /* Development.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 			);
 			name = NewsApp;
 			productName = NewsApp;
-			productReference = CFAF50D32A814067001FAD24 /* Production.app */;
+			productReference = CFAF50D32A814067001FAD24 /* Development.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

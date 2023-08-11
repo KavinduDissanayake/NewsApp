@@ -23,6 +23,12 @@ class HomeVC: BaseVC{
     let disposeBag = DisposeBag()
     var viewModel = HomeViewModel()
     
+    //for refresh 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //fetch all the data from api
+        getTopAndAllNews()
+    }
     
     //MARK: Life cycle
     override func viewDidLoad() {
