@@ -1,56 +1,78 @@
 //
-//  HomeVC.swift
+//  SeeAllNewsVC.swift
 //  NewsApp
 //
-//  Created by Kavindu Dissanayake on 2023-08-10.
+//  Created by Kavindu Dissanayake on 2023-08-11.
 //
 
 import UIKit
-import SwiftUI
 import RxSwift
 import RxCocoa
 
-class HomeVC: BaseVC{
-    
+
+class SeeAllNewsVC: BaseVC {
+
     @IBOutlet weak var topSearchTF: UITextField!
-    @IBOutlet weak var latestNewsCV: UICollectionView!
-    @IBOutlet weak var catgoryCV: UICollectionView!
     @IBOutlet weak var allNewsTV: UITableView!
+    @IBOutlet weak var catgoryCV: UICollectionView!
     @IBOutlet weak var searchBarBackStack: UIStackView!
-    @IBOutlet weak var seeAllBtnStack: UIStackView!
-    
+    @IBOutlet weak var filterBtn: UIImageView!
     
     let disposeBag = DisposeBag()
-    var viewModel = HomeViewModel()
+    var viewModel = SeeAllNewsViewModel()
     
+    var selectedCategories: [Category?] = []
+
     
-    //MARK: Life cycle
+    // MARK: -Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideNavigationBar(isHide: true)
-        // Do any additional setup after loading the view.
+        defaultBackBtn()
         configCollectionView()
-        setUpUI()
         configTableView()
         bindViewModel()
-        
-        getTopNews()
-        getBottomNews()
-        
-        configTableView()
+        setupTapGesture()
+       // getBottomNews()
+        setUpUI()
     }
     
+    // MARK: -Life Cycle
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        hideNavigationBar(isHide: false)
     }
+    
     
     func setUpUI(){
         searchBarBackStack.setBorder(width: 1.0, color: UIColor(hexString: "#f1f2fa"), cornerRadius: 10.0)
     }
+    func setupTapGesture() {
+        filterBtn.isUserInteractionEnabled = true // Make sure user interaction is enabled
+
+        let tapGesture = UITapGestureRecognizer()
+        filterBtn.addGestureRecognizer(tapGesture)
+
+        tapGesture.rx.event
+            .bind(onNext: { [weak self] _ in
+                // Handle the tap here
+                self?.handlefilterBtnImageTap()
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func handlefilterBtnImageTap() {
+        //TODO: Rector this 
+        let storyBoard = UIStoryboard(name: "Home", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "FilterBottomSheetVC") as! FilterBottomSheetVC
+        vc.delegate = self
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+        
+        
+//        ASP.shared.presentViewController(in: .Home, for: .FilterBottomSheetVC, from: self)
+    }
 }
 
-extension HomeVC {
+extension SeeAllNewsVC {
     func bindViewModel() {
         
         topSearchTF.rx.text.orEmpty
@@ -63,38 +85,12 @@ extension HomeVC {
             .distinctUntilChanged() // Make sure we only
             .subscribe(onNext: { [weak self] text in
                 guard let text = text, !text.isEmpty else { return }
-                self?.getTopNews()
                 self?.getBottomNews()
-            })
-            .disposed(by: disposeBag)
-        
-        
-        //cell declare
-        viewModel.atricleTopList.asObservable()
-            .bind(to: latestNewsCV.rx.items(cellIdentifier: LatestNewsCell.className, cellType: LatestNewsCell.self)) { row, element, cell in
-                cell.configCell(article: element)
-            }
-            .disposed(by: disposeBag)
-        
-        //cell pagnition
-        latestNewsCV.rx.willDisplayCell
-            .subscribe(onNext: { [weak self] (cell, indexPath) in
-                let lastItem = (self?.viewModel.atricleTopList.value.count ?? 0) - 2
-                if indexPath.row == lastItem {
-                    self?.viewModel.currentPageTopNews += 1
-                    self?.getTopNews()
-                }
-            })
-            .disposed(by: disposeBag)
-        
-        latestNewsCV.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
                 
-                ASP.shared.pushToViewController(in: .Home, for: .NewsDetailVC, from: self,data: self?.viewModel.atricleTopList.value[indexPath.row])
-
             })
             .disposed(by: disposeBag)
         
+     
         
         //call deleagets
         catgoryCV
@@ -109,17 +105,15 @@ extension HomeVC {
             }
         
             .disposed(by: disposeBag)
-        
      
         
         
         //select
         catgoryCV.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                
                 self?.viewModel.toggleSelection(at: indexPath.row)
-                self?.getTopNews()
                 self?.getBottomNews()
+              
             })
             .disposed(by: disposeBag)
         
@@ -155,15 +149,12 @@ extension HomeVC {
         
     }
 }
-
-
-extension HomeVC {
+extension SeeAllNewsVC {
     func configCollectionView(){
         //register xib
-        self.latestNewsCV.register(UINib(nibName: LatestNewsCell.className, bundle: Bundle.main), forCellWithReuseIdentifier: LatestNewsCell.className)
-        
         self.catgoryCV.register(UINib(nibName: CategoryCell.className, bundle: Bundle.main), forCellWithReuseIdentifier: CategoryCell.className)
     }
+    
     
     func configTableView(){
         self.allNewsTV?.register(UINib(nibName: NewsTVCell.className, bundle: nil), forCellReuseIdentifier:  NewsTVCell.className)
@@ -172,20 +163,8 @@ extension HomeVC {
 }
 
 //MARK: api call
-extension HomeVC {
-    func getTopNews(){
-        self.startLoading()
-        viewModel.getTopNews() { status, message in
-            self.stopLoading()
-            //handle error
-            if message !=  "" && !status{
-                self.showAlert(message)
-            }
-        }
-    }
-}
 
-extension HomeVC {
+extension SeeAllNewsVC {
     func getBottomNews(){
         self.startLoading()
         viewModel.getAllNews() { status, message in
@@ -198,12 +177,12 @@ extension HomeVC {
     }
 }
 
-extension HomeVC :UICollectionViewDelegateFlowLayout{
+
+
+
+extension SeeAllNewsVC :UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == latestNewsCV {
-            return CGSize(width: 345, height: 240)
-        }
-        
+       
         if collectionView == catgoryCV {
             
             // Dynamic cell width based on content width
@@ -217,40 +196,31 @@ extension HomeVC :UICollectionViewDelegateFlowLayout{
     }
 }
 
-//MARK: - TableView
-//extension HomeVC:UITableViewDelegate, UITableViewDataSource  {
-//
-//    func configTableView(){
-//        let tableViewRegistrations = [
-//            (tableView: allNewsTV, cellNibName: "NewsTVCell", cellIdentifier: "NewsTVCell")
-//        ]
-//        //add it using forach for easy to handle
-//        tableViewRegistrations.forEach {
-//            $0.tableView?.register(UINib(nibName: $0.cellNibName, bundle: nil), forCellReuseIdentifier: $0.cellIdentifier)
-//            $0.tableView?.delegate = self
-//            $0.tableView?.dataSource = self
-//        }
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        40
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTVCell", for: indexPath) as? NewsTVCell else {
-//            return UITableViewCell()
-//        }
-//        return cell
-//
-//    }
-//}
 
 
-//MARK: PREVIEW
-struct HomeVC_Previews: PreviewProvider {
-    static var previews: some View {
-        let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC")
-        return UIViewControllerWrapper(viewController: homeVC).ignoresSafeArea()
+class DelegateManager {
+    static let shared = DelegateManager()
+    
+    private var delegates: [String: AnyObject] = [:]
+    
+    private init() {}
+    
+    func setDelegate<T: AnyObject>(for identifier: ViewContolers, delegate: T) {
+        delegates[identifier.rawValue] = delegate
+    }
+    
+    func delegate<T>(for identifier: ViewContolers) -> T? {
+        return delegates[identifier.rawValue] as? T
     }
 }
 
+extension SeeAllNewsVC: FilterBottomSheetVCDelegate {
+    func didSelectCategoryList(_ categoryList: [Category?]) {
+        self.selectedCategories = categoryList
+    }
+    
+    func currentSelectedCategories() -> [Category?] {
+        return self.selectedCategories
+
+    }
+}

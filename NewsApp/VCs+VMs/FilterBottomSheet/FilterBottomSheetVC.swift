@@ -11,20 +11,46 @@ import RxCocoa
 
 
 class FilterBottomSheetVC: BaseVC {
-
-    @IBOutlet weak var filtterOtipnsCv: UICollectionView!
     
-    let disposeBag = DisposeBag()
+    @IBOutlet weak var filtterOtipnsCv: UICollectionView!
+    @IBOutlet weak var resetBtnImge: UIImageView!
+    @IBOutlet weak var saveBtn: UIButton!
+    
+    @IBOutlet var backgroundView: UIView!
+    
+    
+    
     var viewModel = FilterBottomSheetViewModel()
+    let disposeBag = DisposeBag()
+    
+    weak var delegate: FilterBottomSheetVCDelegate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
+        
+        setUpUI()
+        setupTapGesture()
+        
         bindViewModel()
-        // Do any additional setup after loading the view.
+        
+        //markCategoriesAsSelected
+        if let previouslySelectedCategories = delegate?.currentSelectedCategories() {
+            viewModel.selectedCategories.accept(previouslySelectedCategories)
+            viewModel.markCategoriesAsSelected()
+        }
+        
     }
     
-
+    @IBAction func saveAction(_ sender: Any) {
+        dimisedView()
+        let selectedCategories = viewModel.selectedCategories.value
+        self.delegate?.didSelectCategoryList(selectedCategories)
+    }
+    
+    
+    
 }
 extension FilterBottomSheetVC {
     func bindViewModel() {
@@ -34,6 +60,7 @@ extension FilterBottomSheetVC {
             .bind(to: filtterOtipnsCv.rx.items(cellIdentifier: CategoryCell.className, cellType: CategoryCell.self)) { row, element, cell in
                 // Configure your cell here
                 cell.configCell(category: element)
+                
             }
         
             .disposed(by: disposeBag)
@@ -56,7 +83,41 @@ extension FilterBottomSheetVC {
         //register xib
         self.filtterOtipnsCv.register(UINib(nibName: CategoryCell.className, bundle: Bundle.main), forCellWithReuseIdentifier: CategoryCell.className)
     }
+    
 }
+
+extension FilterBottomSheetVC {
+    func setUpUI(){
+        let startColor = UIColor(red: 1, green: 0.23, blue: 0.27, alpha: 1)
+        let endColor = UIColor(red: 1, green: 0.50, blue: 0.53, alpha: 1)
+        saveBtn.setGradientBackground(colorOne: startColor, colorTwo: endColor, cornerRadius: 20)
+    }
+    func setupTapGesture() {
+        resetBtnImge.isUserInteractionEnabled = true // Make sure user interaction is enabled
+        
+        let tapGesture = UITapGestureRecognizer()
+        resetBtnImge.addGestureRecognizer(tapGesture)
+        
+        tapGesture.rx.event
+            .bind(onNext: { [weak self] _ in
+                // Handle the tap here
+                self?.handleResetImageTap()
+            })
+            .disposed(by: disposeBag)
+        
+    }
+    
+    func handleResetImageTap() {
+        // Your logic for the tap gesture on the resetBtnImge
+        print("Image tapped!")
+        dimisedView()
+        viewModel.selectedCategories.accept([])
+        let selectedCategories = viewModel.selectedCategories.value
+        self.delegate?.didSelectCategoryList(selectedCategories)
+    }
+    
+}
+
 
 extension FilterBottomSheetVC :UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

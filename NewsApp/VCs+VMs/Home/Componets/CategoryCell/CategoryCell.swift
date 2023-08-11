@@ -19,20 +19,21 @@ class CategoryCell: UICollectionViewCell {
 
     func configCell(category:Category?) {
         titleLbl.text = (category?.name ?? "").localizedCapitalized
-        
+        cardBack.cornerViewRadius = 10
+
+//
         if category?.isSelected ?? false {
             titleLbl.textColor = .white
-//            let startColor = UIColor(red: 1, green: 0.23, blue: 0.27, alpha: 1)
-//            let endColor = UIColor(red: 1, green: 0.50, blue: 0.53, alpha: 1)
-            cardBack.layer.backgroundColor = UIColor.green.cgColor
+            cardBack.layer.backgroundColor = UIColor(hexString: "#FF8086").cgColor
         } else {
             titleLbl.textColor = .black
-//            // making outer view corners, borders
-//            cardBack.layer.cornerRadius = 13.0
-//            cardBack.layer.borderWidth = 0.5
-//            cardBack.layer.borderColor = #colorLiteral(red: 0.7647058824, green: 0.768627451, blue: 0.8, alpha: 1).cgColor
-            cardBack.layer.backgroundColor = UIColor.blue.cgColor
+            cardBack.layer.borderColor =   UIColor(hexString: "#F0F1FA").cgColor
+            cardBack.layer.borderWidth =  1
+            cardBack.layer.backgroundColor = UIColor.clear.cgColor
+
         }
+
+
     }
 
 }

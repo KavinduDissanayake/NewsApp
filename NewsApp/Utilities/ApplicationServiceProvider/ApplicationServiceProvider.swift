@@ -15,12 +15,16 @@ enum ViewContolers: String {
     case SignUpVC
     case HomeVC
     case CustomTBC
+    case NewsDetailVC
+    case FilterBottomSheetVC
+    
 }
 
 enum Storyboard: String {
     case Main
     case BottomTabBar
     case Auth
+    case Home
 }
 
 
@@ -34,7 +38,7 @@ class ApplicationServiceProvider {
         
         // Initialize based on the ViewContolers enum value
         switch identifier {
-        case .LoginVC, .SignUpVC, .HomeVC:
+        case .LoginVC, .SignUpVC, .HomeVC, .FilterBottomSheetVC:
             let destVc = storyboard.instantiateViewController(withIdentifier: identifier.rawValue)
             vc?.navigationController?.pushViewController(destVc, animated: true)
             
@@ -42,6 +46,12 @@ class ApplicationServiceProvider {
             if let _vc = storyboard.instantiateViewController(withIdentifier: identifier.rawValue) as? CustomTBC {
                 vc?.navigationController?.pushViewController(_vc, animated: true)
             }
-        }
-    }
+        case .NewsDetailVC: // Assuming you added this case to your enum
+            if let _vc = storyboard.instantiateViewController(withIdentifier: identifier.rawValue) as? NewsDetailVC {
+                if let dataRecived =  data as? Article {
+                    _vc.viewModel.article.accept(dataRecived)
+                }
+                vc?.navigationController?.pushViewController(_vc, animated: true)
+            }
+        }}
 }

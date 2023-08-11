@@ -58,6 +58,9 @@
 		CFE0A58A2A85E63F009B0313 /* FilterBottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0A5892A85E63F009B0313 /* FilterBottomSheetVC.swift */; };
 		CFE0A58D2A85E6B7009B0313 /* FilterBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0A58C2A85E6B7009B0313 /* FilterBottomSheetViewModel.swift */; };
 		CFE0A58F2A85FE84009B0313 /* NewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0A58E2A85FE84009B0313 /* NewsDetailViewModel.swift */; };
+		CFE0A5912A860C6F009B0313 /* SeeAllNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0A5902A860C6F009B0313 /* SeeAllNewsVC.swift */; };
+		CFE0A5942A860EB9009B0313 /* SeeAllNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0A5932A860EB9009B0313 /* SeeAllNewsViewModel.swift */; };
+		CFE0A5972A861A9F009B0313 /* ASP+Navigations+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0A5962A861A9F009B0313 /* ASP+Navigations+Present.swift */; };
 		E655AA0D3F7B4A8184638206 /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFFB3030636345A407E7F65 /* Pods_NewsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +124,9 @@
 		CFE0A5892A85E63F009B0313 /* FilterBottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBottomSheetVC.swift; sourceTree = "<group>"; };
 		CFE0A58C2A85E6B7009B0313 /* FilterBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBottomSheetViewModel.swift; sourceTree = "<group>"; };
 		CFE0A58E2A85FE84009B0313 /* NewsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModel.swift; sourceTree = "<group>"; };
+		CFE0A5902A860C6F009B0313 /* SeeAllNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllNewsVC.swift; sourceTree = "<group>"; };
+		CFE0A5932A860EB9009B0313 /* SeeAllNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllNewsViewModel.swift; sourceTree = "<group>"; };
+		CFE0A5962A861A9F009B0313 /* ASP+Navigations+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASP+Navigations+Present.swift"; sourceTree = "<group>"; };
 		F14383CBED8AE1F0E881E0B8 /* Pods-NewsApp.release-prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release-prod.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release-prod.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,13 +268,13 @@
 			path = NewsTVCell;
 			sourceTree = "<group>";
 		};
-		CF4A47CA2A85906100FC7004 /* NewsDetailVC */ = {
+		CF4A47CA2A85906100FC7004 /* NewsDetails */ = {
 			isa = PBXGroup;
 			children = (
 				CF4A47CB2A85907B00FC7004 /* NewsDetailVC.swift */,
 				CFE0A58E2A85FE84009B0313 /* NewsDetailViewModel.swift */,
 			);
-			path = NewsDetailVC;
+			path = NewsDetails;
 			sourceTree = "<group>";
 		};
 		CF592D942A83897B00C7130C /* Application */ = {
@@ -282,6 +288,7 @@
 		CF592D952A83898300C7130C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CFE0A5952A861A7C009B0313 /* ApplicationServiceProvider */,
 				CF4A47C22A8573B800FC7004 /* LocalDb */,
 				CF4A47B12A852F4A00FC7004 /* Dummy */,
 				CF592DD32A83FD9900C7130C /* Extensions */,
@@ -289,7 +296,6 @@
 				CFAF50F62A814C9E001FAD24 /* Fonts */,
 				CF4A47B42A8533CE00FC7004 /* Handlers.swift */,
 				CF4A47B62A85340300FC7004 /* Reachability.swift */,
-				CF4A47C52A85797200FC7004 /* ApplicationServiceProvider.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -309,8 +315,9 @@
 		CF592D972A8389A000C7130C /* VCs+VMs */ = {
 			isa = PBXGroup;
 			children = (
+				CFE0A5922A860E9A009B0313 /* SeeAllNews */,
 				CFE0A58B2A85E6A4009B0313 /* FilterBottomSheet */,
-				CF4A47CA2A85906100FC7004 /* NewsDetailVC */,
+				CF4A47CA2A85906100FC7004 /* NewsDetails */,
 				CF4A47A72A84C8E000FC7004 /* Home */,
 				CF8ECEAD2A848927004FE88C /* Auth */,
 				CF592DA32A83A2B100C7130C /* CustomTBC.swift */,
@@ -424,6 +431,24 @@
 				CFE0A58C2A85E6B7009B0313 /* FilterBottomSheetViewModel.swift */,
 			);
 			path = FilterBottomSheet;
+			sourceTree = "<group>";
+		};
+		CFE0A5922A860E9A009B0313 /* SeeAllNews */ = {
+			isa = PBXGroup;
+			children = (
+				CFE0A5902A860C6F009B0313 /* SeeAllNewsVC.swift */,
+				CFE0A5932A860EB9009B0313 /* SeeAllNewsViewModel.swift */,
+			);
+			path = SeeAllNews;
+			sourceTree = "<group>";
+		};
+		CFE0A5952A861A7C009B0313 /* ApplicationServiceProvider */ = {
+			isa = PBXGroup;
+			children = (
+				CF4A47C52A85797200FC7004 /* ApplicationServiceProvider.swift */,
+				CFE0A5962A861A9F009B0313 /* ASP+Navigations+Present.swift */,
+			);
+			path = ApplicationServiceProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,8 +588,10 @@
 				CF592DE02A84118600C7130C /* CardView.swift in Sources */,
 				CF4A47C82A857C6600FC7004 /* ProfileVC.swift in Sources */,
 				CF4A47992A84B84100FC7004 /* UIButton++.swift in Sources */,
+				CFE0A5912A860C6F009B0313 /* SeeAllNewsVC.swift in Sources */,
 				CF592DD52A83FDAA00C7130C /* Preview++.swift in Sources */,
 				CF4A47AD2A8528B900FC7004 /* AFWrapper.swift in Sources */,
+				CFE0A5972A861A9F009B0313 /* ASP+Navigations+Present.swift in Sources */,
 				CF4A47A22A84C2A100FC7004 /* UINavigationController++.swift in Sources */,
 				CF47087A2A81626B00C89C00 /* BaseVC.swift in Sources */,
 				CF4A47B72A85340300FC7004 /* Reachability.swift in Sources */,
@@ -585,6 +612,7 @@
 				CFE0A58F2A85FE84009B0313 /* NewsDetailViewModel.swift in Sources */,
 				CF4A47B32A852F5C00FC7004 /* dummy.swift in Sources */,
 				CF4A47A62A84C6CD00FC7004 /* UIColor++.swift in Sources */,
+				CFE0A5942A860EB9009B0313 /* SeeAllNewsViewModel.swift in Sources */,
 				CF8ECEBD2A84981A004FE88C /* NewsTVCell.swift in Sources */,
 				CF4A47B92A85481000FC7004 /* LoadingIndicatorDelegate.swift in Sources */,
 				CFE0A58D2A85E6B7009B0313 /* FilterBottomSheetViewModel.swift in Sources */,

@@ -11,6 +11,10 @@ class BaseVC: UIViewController,LoadingIndicatorDelegate{
     func goBack() {
         navigationController?.popViewController(animated: true)
     }
+    func dimisedView(){
+        self.dismiss(animated: true)
+
+    }
     
     func hideNavigationBar(isHide:Bool = true){
         self.navigationController?.isNavigationBarHidden = isHide
