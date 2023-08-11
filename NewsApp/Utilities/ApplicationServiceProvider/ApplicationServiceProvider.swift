@@ -17,6 +17,7 @@ enum ViewContolers: String {
     case CustomTBC
     case NewsDetailVC
     case FilterBottomSheetVC
+    case SeeAllNewsVC
     
 }
 
@@ -38,7 +39,7 @@ class ApplicationServiceProvider {
         
         // Initialize based on the ViewContolers enum value
         switch identifier {
-        case .LoginVC, .SignUpVC, .HomeVC, .FilterBottomSheetVC:
+        case .LoginVC, .SignUpVC, .HomeVC, .FilterBottomSheetVC,.SeeAllNewsVC:
             let destVc = storyboard.instantiateViewController(withIdentifier: identifier.rawValue)
             vc?.navigationController?.pushViewController(destVc, animated: true)
             

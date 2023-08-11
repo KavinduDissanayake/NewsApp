@@ -115,13 +115,12 @@ extension HomeViewModel {
             return
         }
         
-        let endpoint = "top-headlines"
+        let endpoint = "everything"
         let parameters: [String: Any] = [
             "q":searchText.value ?? "",
             "category": selectedCategory.value ?? "",
             "page": currentPageBottomNews,
             "pageSize":perPage,
-            "country":"us",//TODO: need to change it later
             "domains":"bbc.co.uk"//other wise getting error from server
         ]
         // If already fetched all articles, don't make a new request

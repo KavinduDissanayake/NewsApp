@@ -12,6 +12,8 @@ class CategoryCell: UICollectionViewCell {
     @IBOutlet weak var cardBack: UIView!
     @IBOutlet weak var titleLbl: UILabel!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

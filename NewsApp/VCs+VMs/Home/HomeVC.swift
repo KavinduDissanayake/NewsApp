@@ -34,10 +34,12 @@ class HomeVC: BaseVC{
         configTableView()
         bindViewModel()
         
-        getTopNews()
-        getBottomNews()
-        
         configTableView()
+        setupTapGesture()
+        
+        //fetch all the data from api
+        getTopAndAllNews()
+       
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,6 +50,25 @@ class HomeVC: BaseVC{
     func setUpUI(){
         searchBarBackStack.setBorder(width: 1.0, color: UIColor(hexString: "#f1f2fa"), cornerRadius: 10.0)
     }
+    func setupTapGesture() {
+        seeAllBtnStack.isUserInteractionEnabled = true // Make sure user interaction is enabled
+        
+        let tapGesture = UITapGestureRecognizer()
+        seeAllBtnStack.addGestureRecognizer(tapGesture)
+        
+        tapGesture.rx.event
+            .bind(onNext: { [weak self] _ in
+                // Handle the tap here
+                self?.seeAllTap()
+            })
+            .disposed(by: disposeBag)
+        
+    }
+    
+    func seeAllTap() {
+        ASP.shared.pushToViewController(in: .Home, for: .SeeAllNewsVC, from: self)
+    }
+    
 }
 
 extension HomeVC {
@@ -63,8 +84,7 @@ extension HomeVC {
             .distinctUntilChanged() // Make sure we only
             .subscribe(onNext: { [weak self] text in
                 guard let text = text, !text.isEmpty else { return }
-                self?.getTopNews()
-                self?.getBottomNews()
+                self?.getTopAndAllNews()
             })
             .disposed(by: disposeBag)
         
@@ -116,10 +136,8 @@ extension HomeVC {
         //select
         catgoryCV.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                
                 self?.viewModel.toggleSelection(at: indexPath.row)
-                self?.getTopNews()
-                self?.getBottomNews()
+                self?.getTopAndAllNews()
             })
             .disposed(by: disposeBag)
         
@@ -198,6 +216,37 @@ extension HomeVC {
     }
 }
 
+extension HomeVC {
+    func getTopAndAllNews() {
+        self.startLoading()
+        //used this to speed up the process
+        let group = DispatchGroup()
+        var messages: [String] = []
+
+        group.enter()
+        viewModel.getTopNews() { status, message in
+            if !status && !message.isEmpty {
+                messages.append(message)
+            }
+            group.leave()
+        }
+
+        group.enter()
+        viewModel.getAllNews() { status, message in
+            if !status && !message.isEmpty {
+                messages.append(message)
+            }
+            group.leave()
+        }
+
+        group.notify(queue: .main) {
+            self.stopLoading()
+            messages.forEach { self.showAlert($0) }
+        }
+    }
+}
+
+
 extension HomeVC :UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == latestNewsCV {
@@ -216,34 +265,6 @@ extension HomeVC :UICollectionViewDelegateFlowLayout{
         
     }
 }
-
-//MARK: - TableView
-//extension HomeVC:UITableViewDelegate, UITableViewDataSource  {
-//
-//    func configTableView(){
-//        let tableViewRegistrations = [
-//            (tableView: allNewsTV, cellNibName: "NewsTVCell", cellIdentifier: "NewsTVCell")
-//        ]
-//        //add it using forach for easy to handle
-//        tableViewRegistrations.forEach {
-//            $0.tableView?.register(UINib(nibName: $0.cellNibName, bundle: nil), forCellReuseIdentifier: $0.cellIdentifier)
-//            $0.tableView?.delegate = self
-//            $0.tableView?.dataSource = self
-//        }
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        40
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTVCell", for: indexPath) as? NewsTVCell else {
-//            return UITableViewCell()
-//        }
-//        return cell
-//
-//    }
-//}
 
 
 //MARK: PREVIEW
