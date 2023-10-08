@@ -34,4 +34,5 @@ jobs:
     
         xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "NewsApp.xcworkspace"
         xcodebuild test-without-building -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "NewsApp.xcworkspace"
+        
 
