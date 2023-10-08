@@ -29,5 +29,5 @@ jobs:
       env:
         SCHEME: ${{ matrix.scheme }}
       run: |
-        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,OS=15.0,name=iPhone 11" -workspace "YourWorkspace.xcworkspace"
-        xcodebuild test-without-building -scheme "$SCHEME" -destination "platform=iOS Simulator,OS=15.0,name=iPhone 11" -workspace "YourWorkspace.xcworkspace"
+        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,OS=15.0,name=iPhone 11" -workspace "NewsApp.xcworkspace"
+        xcodebuild test-without-building -scheme "$SCHEME" -destination "platform=iOS Simulator,OS=15.0,name=iPhone 11" -workspace "NewsApp.xcworkspace"
