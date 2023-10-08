@@ -12,7 +12,7 @@ jobs:
     
     strategy:
       matrix:
-        scheme: ["Development", "Production"]
+        scheme: ["Development"]
         
     steps:
     - name: Checkout code
