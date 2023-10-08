@@ -28,11 +28,8 @@ jobs:
       env:
         SCHEME: ${{ matrix.scheme }}
       run: |
-        # Selecting a simulator dynamically
-        DEVICE=$(xcrun simctl list devices available 'iOS' | grep -m 1 'iPhone' | awk -F '[()]' '{print $2}' | awk '{print $1}')
+        DEVICE="5DDD29C5-6A31-42EB-B32B-BDAFF88BCFB"
         echo "Selected Device: $DEVICE"
     
-        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "NewsApp.xcworkspace"
-        xcodebuild test-without-building -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "NewsApp.xcworkspace"
-
-        # If you want to make a comment or add additional commands, ensure it is placed correctly in the workflow file.
+        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "YourApp.xcworkspace"
+        xcodebuild test-without-building -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "YourApp.xcworkspace"
