@@ -28,8 +28,10 @@ jobs:
       env:
         SCHEME: ${{ matrix.scheme }}
       run: |
-        DEVICE="5DDD29C5-6A31-42EB-B32B-BDAFF88BCFB"
-        echo "Selected Device: $DEVICE"
-    
-        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,name=iPhone 14,OS=16.4" -workspace "NewsApp.xcworkspace"
-        xcodebuild build-for-building -scheme "$SCHEME" -destination "platform=iOS Simulator,name=iPhone 14,OS=16.4" -workspace "NewsApp.xcworkspace"
+        # Extract the name and OS version of the first available simulator
+        DEVICE=$(xcrun simctl list devices available | grep -E '\((.*)\) \((.*)\) ' | head -n 1 | awk -F "[()]" '{print $2}' | awk '{print $1}')
+        OS_VERSION=$(xcrun simctl list devices available | grep -E '\((.*)\) \((.*)\) ' | head -n 1 | awk -F "[()]" '{print $4}' | awk '{print $1}')
+        
+        echo "Selected Device: $DEVICE ($OS_VERSION)"
+        
+        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,name=$DEVICE,OS=$OS_VERSION" -workspace "NewsApp.xcworkspace"
