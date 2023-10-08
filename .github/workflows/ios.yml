@@ -18,9 +18,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Check current directory and list contents
+      run: |
+        pwd
+        ls -la
+    
     - name: Set Xcode version
       run: sudo xcode-select -s '/Applications/Xcode_13.1.app' 
-      # Ensure to use a version that has your required simulators and SDKs
 
     - name: List available simulators
       run: xcrun simctl list devices available
@@ -29,5 +33,5 @@ jobs:
       env:
         SCHEME: ${{ matrix.scheme }}
       run: |
-        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,OS=15.0,name=iPhone 11" -workspace "NewsApp.xcworkspace"
-        xcodebuild test-without-building -scheme "$SCHEME" -destination "platform=iOS Simulator,OS=15.0,name=iPhone 11" -workspace "NewsApp.xcworkspace"
+        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,OS=15.0,name=iPhone 11" -workspace "NewsApp.xcworkspace"  # <- Change Here
+        xcodebuild test-without-building -scheme "$SCHEME" -destination "platform=iOS Simulator,OS=15.0,name=iPhone 11" -workspace "NewsApp.xcworkspace"  # <- Change Here
