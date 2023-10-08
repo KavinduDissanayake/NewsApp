@@ -24,14 +24,14 @@ jobs:
     - name: List available simulators
       run: xcrun simctl list devices available
     
-- name: Build and Test
-  env:
-    SCHEME: ${{ matrix.scheme }}
-  run: |
-    # Selecting a simulator dynamically
-    DEVICE=$(xcrun simctl list devices available 'iOS' | grep -m 1 'iPhone' | awk -F '[()]' '{print $2}' | awk '{print $1}')
-    echo "Selected Device: $DEVICE"
-
-    xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "NewsApp.xcworkspace"
-    xcodebuild test-without-building -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "NewsApp.xcworkspace"
+    - name: Build and Test
+      env:
+        SCHEME: ${{ matrix.scheme }}
+      run: |
+        # Selecting a simulator dynamically
+        DEVICE=$(xcrun simctl list devices available 'iOS' | grep -m 1 'iPhone' | awk -F '[()]' '{print $2}' | awk '{print $1}')
+        echo "Selected Device: $DEVICE"
+    
+        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "NewsApp.xcworkspace"
+        xcodebuild test-without-building -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "NewsApp.xcworkspace"
 
