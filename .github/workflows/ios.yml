@@ -31,5 +31,5 @@ jobs:
         DEVICE="5DDD29C5-6A31-42EB-B32B-BDAFF88BCFB"
         echo "Selected Device: $DEVICE"
     
-        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "NewsApp.xcworkspace"
-        xcodebuild test-without-building -scheme "$SCHEME" -destination "platform=iOS Simulator,id=$DEVICE" -workspace "NewsApp.xcworkspace"
+        xcodebuild build-for-testing -scheme "$SCHEME" -destination "platform=iOS Simulator,name=iPhone 14,OS=16.4" -workspace "NewsApp.xcworkspace"
+        xcodebuild build-for-building -scheme "$SCHEME" -destination "platform=iOS Simulator,name=iPhone 14,OS=16.4" -workspace "NewsApp.xcworkspace"
